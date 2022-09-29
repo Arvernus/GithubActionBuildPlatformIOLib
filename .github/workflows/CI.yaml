@@ -2,6 +2,11 @@ name: CI
 
 on:
   workflow_call:
+    inputs:
+        private:
+          default: true
+          required: false
+          type: boolean
 
 jobs:
   setup:
