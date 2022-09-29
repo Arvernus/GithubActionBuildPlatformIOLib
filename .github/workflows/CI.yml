@@ -7,6 +7,7 @@ on:
         default: true
         required: false
         type: boolean
+    secrets:
       PLATFORMIO_AUTH_TOKEN:
         required: true
         type: string
