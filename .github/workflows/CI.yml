@@ -173,6 +173,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: puplish to Platform.io
+        if: ${{ inputs.private }}
+        env:
+          PLATFORMIO_AUTH_TOKEN: ${{ secrets.PLATFORMIO_AUTH_TOKEN }}
+        run: pio pkg publish --private --owner iRock --no-interactive Archive/${{ github.event.repository.name }}.tar.gz
+      - name: puplish to Platform.io
+        if: ${{ !inputs.private }}
         env:
           PLATFORMIO_AUTH_TOKEN: ${{ secrets.PLATFORMIO_AUTH_TOKEN }}
         run: pio pkg publish --owner iRock --no-interactive Archive/${{ github.event.repository.name }}.tar.gz
