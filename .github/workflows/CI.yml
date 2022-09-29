@@ -3,10 +3,13 @@ name: CI
 on:
   workflow_call:
     inputs:
-        private:
-          default: true
-          required: false
-          type: boolean
+      private:
+        default: true
+        required: false
+        type: boolean
+      PLATFORMIO_AUTH_TOKEN:
+        required: true
+        type: string
 
 jobs:
   setup:
