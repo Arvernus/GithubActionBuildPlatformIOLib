@@ -1,14 +1,7 @@
 name: CI
 
 on:
-  pull_request:
-    types:
-      - opened
-      - edited
-      - closed
-      - reopened
-      - synchronize
-  push:
+  workflow_call:
 
 jobs:
   setup:
